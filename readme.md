@@ -1,138 +1,43 @@
-# slugify [![Build Status](https://travis-ci.org/sindresorhus/slugify.svg?branch=master)](https://travis-ci.org/sindresorhus/slugify)
+# standard-atmosphere
 
-> Slugify a string
-
-Useful for URLs, filenames, and IDs.
-
-It correctly handles [German umlauts](https://en.wikipedia.org/wiki/Germanic_umlaut), Vietnamese, Arabic, Russian, Romanian, Turkish, and more.
+Properties of US standard atmosphere ranging -5000 to 250000 ft altitude
 
 ## Install
 
 ```
-$ npm install @sindresorhus/slugify
+$ npm install standard-atmosphere
 ```
 
 ## Usage
 
 ```js
-const slugify = require('@sindresorhus/slugify');
+const slugify = require('standard-atmosphere');
 
-slugify('I ♥ Dogs');
-//=> 'i-love-dogs'
+standardAtmosphere(30000, true) // SI units (metric)
+```
 
-slugify('  Déjà Vu!  ');
-//=> 'deja-vu'
-
-slugify('fooBar 123 $#%');
-//=> 'foo-bar-123'
-
-slugify('I ♥ 🦄 & 🐶', {
-	customReplacements: [
-		['🐶', 'dog']
-	]
-});
-//=> 'i-love-unicorn-and-dog'
+```js
+{
+  temperature: 226.64962024973363,  // K (Kelvin)
+  density: 0.018012827594042123, // kg/m^3
+  pressure: 1171.9514784825592, // N/m^2
+  viscosity: 0.0000147602655462344, // N sec/m^2
+  ssound: 301.80574748785267 // m/sec
+}
 ```
 
 ## API
 
-### slugify(string, options?)
+### slugify(altitude, si?)
 
-#### string
+#### altitude
 
-Type: `string`
+Type: `number`
 
 String to slugify.
 
-#### options
+#### si
 
-Type: `object`
+Type: `boolean`
 
-##### separator
-
-Type: `string`\
-Default: `'-'`
-
-```js
-const slugify = require('@sindresorhus/slugify');
-
-slugify('BAR and baz');
-//=> 'bar-and-baz'
-
-slugify('BAR and baz', {separator: '_'});
-//=> 'bar_and_baz'
-```
-
-##### lowercase
-
-Type: `boolean`\
-Default: `true`
-
-Make the slug lowercase.
-
-```js
-const slugify = require('@sindresorhus/slugify');
-
-slugify('Déjà Vu!');
-//=> 'deja-vu'
-
-slugify('Déjà Vu!', {lowercase: false});
-//=> 'Deja-Vu'
-```
-
-##### decamelize
-
-Type: `boolean`\
-Default: `true`
-
-Convert camelcase to separate words. Internally it does `fooBar` → `foo bar`.
-
-```js
-const slugify = require('@sindresorhus/slugify');
-
-slugify('fooBar');
-//=> 'foo-bar'
-
-slugify('fooBar', {decamelize: false});
-//=> 'foobar'
-```
-
-##### customReplacements
-
-Type: `Array<string[]>`\
-Default: `[
-	['&', ' and '],
-	['🦄', ' unicorn '],
-	['♥', ' love ']
-]`
-
-Specifying this only replaces the default if you set an item with the same key, like `&`. The replacements are run on the original string before any other transformations.
-
-```js
-const slugify = require('@sindresorhus/slugify');
-
-slugify('Foo@unicorn', {
-	customReplacements: [
-		['@', 'at']
-	]
-});
-//=> 'fooatunicorn'
-```
-
-Add a leading and trailing space to the replacement to have it separated by dashes:
-
-```js
-const slugify = require('@sindresorhus/slugify');
-
-slugify('foo@unicorn', {
-	customReplacements: [
-		['@', ' at ']
-	]
-});
-//=> 'foo-at-unicorn'
-```
-
-## Related
-
-- [slugify-cli](https://github.com/sindresorhus/slugify-cli) - CLI for this module
-- [filenamify](https://github.com/sindresorhus/filenamify) - Convert a string to a valid safe filename
+SI unit input/output?
