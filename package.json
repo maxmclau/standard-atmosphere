@@ -1,0 +1,33 @@
+{
+	"name": "standard-atmosphere",
+	"version": "1.0",
+	"description": "1976 US Standard Atmosphere implementation",
+	"license": "MIT",
+	"repository": "maxmclau/standard-atmosphere",
+	"author": {
+		"name": "Maxmillion McLaughlin",
+		"email": "github@maxmclau.com",
+		"url": "https://maxmclau.com"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"us",
+		"standard",
+		"atmosphere",
+		"1976",
+		"physics",
+		"url-safe",
+		"troposphere",
+		"stratosphere",
+		"mesosphere",
+		"altitude",
+		"temperature",
+		"pressure",
+		"density"
+	]
+}
