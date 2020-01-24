@@ -11,7 +11,7 @@ $ npm install standard-atmosphere
 ## Usage
 
 ```js
-const slugify = require('standard-atmosphere');
+const standardAtmosphere = require('standard-atmosphere');
 
 standardAtmosphere(30000, true) // SI units (metric)
 ```
@@ -28,13 +28,11 @@ standardAtmosphere(30000, true) // SI units (metric)
 
 ## API
 
-### slugify(altitude, si?)
+### standardAtmosphere(altitude, si?)
 
 #### altitude
 
 Type: `number`
-
-String to slugify.
 
 #### si
 
