@@ -13,9 +13,9 @@ const standardAtmosphere = (altitude, si) => {
 
 	altitude = (si) ? altitude*3.2808 : altitude
 
-  let theta = 1.0
-  let sigma = 1.0
-  let delta = 1.0
+	let theta = 1.0
+	let sigma = 1.0
+	let delta = 1.0
 
 	if (altitude < 232940) {
 		theta = 1.434843 - altitude/337634
