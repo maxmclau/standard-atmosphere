@@ -8,7 +8,11 @@ const sl = { // standard sea-level conditions
 
 const standardAtmosphere = (altitude, si) => {
 	if (typeof altitude !== 'number') {
-		throw new TypeError(`Expected a number, got \`${typeof string}\``);
+		throw new TypeError(`Expected a number for altitude, got \`${typeof string}\``);
+	}
+
+	if (typeof si !== 'boolean') {
+		throw new TypeError(`Expected a boolean for si, got \`${typeof boolean}\``);
 	}
 
 	altitude = (si) ? altitude*3.2808 : altitude
