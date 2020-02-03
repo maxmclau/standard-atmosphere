@@ -29,5 +29,11 @@
 		"temperature",
 		"pressure",
 		"density"
-	]
+	],
+	"scripts": {
+		"test": "ava"
+	},
+	"devDependencies": {
+		"ava": "^3.2.0"
+	}
 }

@@ -26,6 +26,12 @@ standardAtmosphere(30000, true) // SI units (metric)
 }
 ```
 
+## Test
+
+```
+$ npm test
+```
+
 ## API
 
 ### standardAtmosphere(altitude, si?)
