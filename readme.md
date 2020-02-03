@@ -1,4 +1,4 @@
-# standard-atmosphere
+# standard-atmosphere  [![Build Status](https://travis-ci.org/maxmclau/standard-atmosphere.svg?branch=master)](https://travis-ci.org/maxmclau/standard-atmosphere)
 
 Properties of US standard atmosphere ranging -5000 to 250000 ft altitude
 
