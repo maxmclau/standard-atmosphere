@@ -6,7 +6,7 @@ const sl = { // standard sea-level conditions
 	pressure: 2116.22 // lbf/ft^2
 }
 
-const standardAtmosphere = (altitude, options) => {
+module.exports = (altitude, options = {}) => {
 	if (typeof altitude !== 'number') {
 		throw new TypeError(`Expected a number for altitude, got \`${typeof string}\``);
 	}
@@ -79,5 +79,3 @@ const standardAtmosphere = (altitude, options) => {
 		ssound : ssound // ft/sec
 	}
 }
-
-module.exports = standardAtmosphere
