@@ -1,6 +1,6 @@
 {
 	"name": "standard-atmosphere",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "1976 US Standard Atmosphere implementation",
 	"license": "MIT",
 	"repository": "maxmclau/standard-atmosphere",
