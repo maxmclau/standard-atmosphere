@@ -2,7 +2,7 @@ const test = require('ava')
 const standardAtmosphere = require('.')
 
 test('zero', t => {
-  const zero = standardAtmosphere(0, true)
+  const zero = standardAtmosphere(0)
 
   t.is(zero.density.toFixed(6), (1.2250058148851999).toFixed(6))
   t.is(zero.viscosity.toFixed(6), (0.000017893720185530342).toFixed(6))

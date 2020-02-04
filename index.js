@@ -6,7 +6,7 @@ const sl = { // standard sea-level conditions
 	pressure: 2116.22 // lbf/ft^2
 }
 
-const standardAtmosphere = (altitude, si) => {
+const standardAtmosphere = (altitude, si = true) => {
 	if (typeof altitude !== 'number') {
 		throw new TypeError(`Expected a number for altitude, got \`${typeof string}\``);
 	}
