@@ -6,16 +6,17 @@ const sl = { // standard sea-level conditions
 	pressure: 2116.22 // lbf/ft^2
 }
 
-const standardAtmosphere = (altitude, si = true) => {
+const standardAtmosphere = (altitude, options) => {
 	if (typeof altitude !== 'number') {
 		throw new TypeError(`Expected a number for altitude, got \`${typeof string}\``);
 	}
 
-	if (typeof si !== 'boolean') {
-		throw new TypeError(`Expected a boolean for si, got \`${typeof boolean}\``);
-	}
+	options = {
+		si: true,
+		...options
+	};
 
-	altitude = (si) ? altitude*3.2808 : altitude
+	altitude = (options.si) ? altitude * 3.2808: altitude
 
 	let theta = 1.0
 	let sigma = 1.0
@@ -64,7 +65,7 @@ const standardAtmosphere = (altitude, si = true) => {
 	const viscosity = 0.0226968 * Math.pow(temp, 1.5) / ((temp) + 198.72) / 1000000.0
 	const ssound = Math.sqrt(1.4 * 1716.56 * (temp))
 
-	return (si) ? {
+	return (options.si) ? {
 		temperature : temp/1.8, // K (Kelvin)
 		density : density/.068521/.028317, // kg/m^3
 		pressure :  pressure/.020885, // N/m^2

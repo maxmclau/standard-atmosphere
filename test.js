@@ -12,7 +12,7 @@ test('zero', t => {
 })
 
 test('si', t => {
-  const five = standardAtmosphere(5000, false)
+  const five = standardAtmosphere(5000, {si: false})
 
   t.is(five.density.toFixed(6), (0.0020480958257755003).toFixed(6))
   t.is(five.pressure.toFixed(6), (1760.7965190535078).toFixed(6))
